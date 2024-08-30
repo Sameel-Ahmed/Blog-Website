@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <h1 class="text-body-emphasis" id="main-h1">Anoninc Blogs</h1>
+
+            <a class="btn btn-success my-3" href="/new" role="button" id="new-post-btn">Create a New Post</a>
+            <% if (locals.posts.length> 0) { %>
+                <h2>Your Posts: </h2>
+                <div class="posts row">
+
+                    <% posts.forEach(function(post, index) { %>
+
+                        <div class="card post col-xl-3 col-lg-4 col-md-6 col-12 my-2">
+                            <div class="card-body px2">
+                                <h5 class="card-title">
+                                    <%= post.title %>
+                                </h5>
+                                <p><small>
+                                        <%= post.date %>
+                                    </small></p>
+                                <p class="card-text">
+                                    <%= post.content %>
+                                </p>
+                                <a class="btn btn-warning" href="/edit/<%= index %>" role="button">Edit</a>
+                                <form action="/delete/<%= index %>" method="POST" style="display:inline;">
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+                <% } else { %>
+                    <h2>No Posts Yet</h2>
+                    <% } %>
+        </div>
+    </div>
+
+
+    <%- include("partials/footer.ejs") %>

@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container">
+        <h1 class="my-4">Create a New Blog</h1>
+        <form action="/new" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="content" class="form-label">Content</label>
+                <textarea class="form-control" id="content" name="content" rows="6" placeholder="Enter the content"
+                    required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Post</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

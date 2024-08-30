@@ -1,0 +1,17 @@
+{
+  "name": "capstone-project-3---blog-web-application",
+  "version": "1.0.0",
+  "description": "A Blog Website",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anoninc",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
